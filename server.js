@@ -3,6 +3,8 @@ const server = require('express')()
 // const renderer = require('vue-server-renderer').createRenderer()
 const { createBundleRenderer } = require('vue-server-renderer')
 
+const serverBundle = require('')
+
 const renderer = createBundleRenderer(serverBundle,{
   runInNewContext: false,
   // template,
