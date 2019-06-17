@@ -1,9 +1,11 @@
-const createApp = require('/path/to/built-server-bundle.js')
+// const createApp = require('/path/to/built-server-bundle.js')
 const server = require('express')()
 // const renderer = require('vue-server-renderer').createRenderer()
 const { createBundleRenderer } = require('vue-server-renderer')
 
-const serverBundle = require('')
+// const serverBundle = require('./dist/vue-ssr-server-bundle.json')
+// const clientManifest = require("./dist/vue-ssr-client-manifest.json")
+const template = require('fs').readFileSync('./dist/index.html', 'utf-8')
 
 const renderer = createBundleRenderer(serverBundle,{
   runInNewContext: false,

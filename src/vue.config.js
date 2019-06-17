@@ -1,11 +1,14 @@
 const merge = require('webpack-merge')
 const nodeExternals = require('webpack-node-externals')
-const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
-const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
+const VueSSRServerPlugin = require('vue-server-renderer/server-plugin.js')
+const VueSSRClientPlugin = require('vue-server-renderer/client-plugin.js')
 const TARGET_NODE = process.env.WEBPACK_TARGET === 'node'
 const target = TARGET_NODE ? 'server' : 'client'
 
 module.exports = {
+  css: {
+    extract: false//关闭提取css,不关闭 node渲染会报错
+  },
   configureWebpack: () => ({
     entry: `./src/entry-${target}.js`,
     devtool: 'source-map',

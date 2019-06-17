@@ -14,11 +14,11 @@ export function createStore() {
       }
     },
     actions: {
-      fetchItem ({ commit }, id) {
+      fetchItem ({ commit }, id = 123) {
         // `store.dispatch()` 会返回 Promise，
         // 以便我们能够知道数据在何时更新
         // return fetchItem(id).then(item => {
-          commit('setItem', 123, {title:456} )
+          commit('setItem', id, {title:456} )
         // })
       }
     }
